@@ -15,8 +15,8 @@ var products = require('./routes/products');
 var app = express();
 
 mongoose.Promise = global.Promise;
-
-mongoose.connect('mongodb://localhost:27017/pisa', {useNewUrlParser: true, useFindAndModify: false })
+mongoose.connect('mongodb+srv://root:555@cluster0-wy11w.gcp.mongodb.net/pisa?retryWrites=true&w=majority:27017', {useNewUrlParser: true, useFindAndModify: false })
+// mongoose.connect('mongodb://localhost:27017/pisa', {useNewUrlParser: true, useFindAndModify: false })
   .then(() =>  console.log('connection successful'))
   .catch((err) => console.error(err));
 
