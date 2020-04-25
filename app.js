@@ -8,14 +8,19 @@ var mongoose = require('mongoose');
 var restful = require('node-restful');
 var methodOverride = require('method-override');
 var cors = require('cors');
+var dotenv = require('dotenv');
+dotenv.config();
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 var products = require('./routes/products');
 var app = express();
 
+
+console.log(process.env.DB_USERNAME);
+
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://root:555@cluster0-wy11w.gcp.mongodb.net/pisa?retryWrites=true&w=majority:27017', {useNewUrlParser: true, useFindAndModify: false })
+mongoose.connect('mongodb+srv://' + process.env.DB_USERNAME + ':' + process.env.DB_PASSWORD + '@' + process.env.DB_HOST + '/' + process.env.DB_NAME + '?retryWrites=true&w=majority:27017', {useNewUrlParser: true, useFindAndModify: false })
 // mongoose.connect('mongodb://localhost:27017/pisa', {useNewUrlParser: true, useFindAndModify: false })
   .then(() =>  console.log('connection successful'))
   .catch((err) => console.error(err));
