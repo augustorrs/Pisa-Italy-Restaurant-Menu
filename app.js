@@ -17,7 +17,6 @@ var products = require('./routes/products');
 var app = express();
 
 
-console.log(process.env.DB_USERNAME);
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb+srv://' + process.env.DB_USERNAME + ':' + process.env.DB_PASSWORD + '@' + process.env.DB_HOST + '/' + process.env.DB_NAME + '?retryWrites=true&w=majority:27017', {useNewUrlParser: true, useFindAndModify: false })
