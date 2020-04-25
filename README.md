@@ -112,7 +112,7 @@ X-Powered-By: Express
 Content-Type: application/json; charset=utf-8
 Content-Length: 185
 ETag: W/"b9-k9Wipgusc9JVZAMyHgjVXw"
-Date: Sun, 19 Feb 2017 03:38:24 GMT
+Date: Sun, 19 Feb 2020 03:38:24 GMT
 Connection: keep-alive
 
 {"_id":"58a9115abed027087df7133b","prod_name":"XBox One","prod_desc":..
@@ -124,7 +124,7 @@ X-Powered-By: Express
 Content-Type: application/json; charset=utf-8
 Content-Length: 155
 ETag: W/"9b-pP1KXaQhyqcMkvBlLa6pFQ"
-Date: Sun, 19 Feb 2017 03:41:54 GMT
+Date: Sun, 19 Feb 2020 03:41:54 GMT
 Connection: keep-alive
 
 {"_id":"58a9115abed027087df7133b","prod_name":"XBox One","prod_desc":"Microsoft XBox One","prod_price":520,"__v":0,"updated_at":"2017-02-19T03:30:34.415Z"}
