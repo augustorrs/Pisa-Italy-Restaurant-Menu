@@ -154,8 +154,7 @@ ETag: W/"b9-k9Wipgusc9JVZAMyHgjVXw"
 Date: Sun, 19 Feb 2020 03:38:24 GMT
 Connection: keep-alive
 
-```{"_id":"58a9115abed027087df7133b","prod_name":"Cheese Toast","prod_desc":..
-```
+```{"_id":"58a9115abed027087df7133b","prod_name":"Cheese Toast","prod_desc":..```
 Finally, we are testing to delete one product by id using this command.
 ```curl -i -X DELETE localhost:3000/ api/v1/ products/58a9115abed027087df7133b```
 It will response like this and the product with that id will be removed from product collection.
