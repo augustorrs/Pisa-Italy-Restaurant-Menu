@@ -2,79 +2,102 @@
 # Pisa-Italian Restaurant using NodeRestApi 
 
 
-# Database Design
+## Database Design
 Database: Mongo DB
+
 Database name: pisa
+
 Collection Name: products
+
 Items: 	cate-Category(ex:STARTER),
+
 item-Item(ex: Bruschetta Con Pomodoro), 
+
 desc-Description, 
+
 price-Price$
 
-# CRUD API
+## CRUD API
 The REST API that we build will have the following functions.
+
 Method	Endpoints	Notes
+
 GET	 /product	Get all products
+
 GET	 /product/:id	Get single product
+
 POST	 /product	Add product
+
 PUT	 /product/:id	Update product
+
 DELETE	 /product/:id	Delete product
+
 To achieve that, add the javascript file to the routes folder.
+
 touch routes/products.js
+
 Open and edit routes/products.js then add these lines of codes.
+
 var express = require('express');
+
 var router = express.Router();
+
 var mongoose = require('mongoose');
+
 var Product = require('../models/Product.js');
 
-/* GET ALL PRODUCTS */
-router.get('/', function(req, res, next) {
+## GET ALL PRODUCTS
+```router.get('/', function(req, res, next) {
   Product.find(function (err, products) {
     if (err) return next(err);
     res.json(products);
   }).sort({cate:-1});
-});
+});```
 
-/* GET SINGLE PRODUCT BY ID */
-router.get('/:id', function(req, res, next) {
+## GET SINGLE PRODUCT BY ID
+```router.get('/:id', function(req, res, next) {
   Product.findById(req.params.id, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
-});
+});```
 
-/* SAVE PRODUCT */
-router.post('/', function(req, res, next) {
+## SAVE PRODUCT
+```router.post('/', function(req, res, next) {
   Product.create(req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
-});
+});```
 
-/* UPDATE PRODUCT */
-router.put('/:id', function(req, res, next) {
+## UPDATE PRODUCT
+```router.put('/:id', function(req, res, next) {
   Product.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
-});
+});```
 
-/* DELETE PRODUCT */
-router.delete('/:id', function(req, res, next) {
+## DELETE PRODUCT
+```router.delete('/:id', function(req, res, next) {
   Product.findByIdAndRemove(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
-});
+});```
 
 module.exports = router;
+
 Next, open and edit app.js then add product route as require after users require.
+
 var products = require('./routes/products');
+
 Then add use after use of users.
+
 app.use('/products', products);
  
 
-Test REST API Endpoints
+## Test REST API Endpoints
 After everything is ready, this time to testing our created Node.js, Express.js, Mongoose.js and MongoDB REST API. There are so many tools for testing REST API, but for now, we are testing using CURL from the terminal.
 We start with Add/Save product data first. Open a new terminal tab or windows then type this command.
 curl -i -X POST -H "Content-Type: application/json" -d '{ "prod_name":"XBox One","prod_desc":"New Microsoft XBox One, the latest games console","prod_price": 520 }' localhost:3000/ api/v1/ products
