@@ -2,7 +2,16 @@
 # Pisa-Italian Restaurant using NodeRestApi 
 
 
-Create Routes for the REST API endpoint
+/*Database Design */
+Database: Mongo DB
+Database name: pisa
+Collection Name: products
+Items: 	cate-Category(ex:STARTER),
+item-Item(ex: Bruschetta Con Pomodoro), 
+desc-Description, 
+price-Price$
+
+/*CRUD API */
 The REST API that we build will have the following functions.
 Method	Endpoints	Notes
 GET	 /product	Get all products
