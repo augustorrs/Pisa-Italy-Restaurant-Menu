@@ -19,7 +19,7 @@ var app = express();
 
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://' + process.env.DB_USERNAME + ':' + process.env.DB_PASSWORD + '@' + process.env.DB_HOST + '/' + process.env.DB_NAME + '?retryWrites=true&w=majority:27017', {useNewUrlParser: true, useFindAndModify: false })
+mongoose.connect('mongodb+srv://' + process.env.DB_USERNAME + ':' + process.env.DB_PASSWORD + '@' + process.env.DB_HOST + '/' + process.env.DB_NAME + '?retryWrites=true&w=majority', {useNewUrlParser: true, useFindAndModify: false })
 // mongoose.connect('mongodb://localhost:27017/pisa', {useNewUrlParser: true, useFindAndModify: false })
   .then(() =>  console.log('connection successful'))
   .catch((err) => console.error(err));
