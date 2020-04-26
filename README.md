@@ -132,8 +132,7 @@ Connection: keep-alive
 
 ```[{"_id":"58a9115abed027087df7133b","prod_name":"Cheese Toast","prod_desc":"Toast with cheese","prod_price":3,"__v":0,"updated_at":"2017-02-19T03:30:34.415Z"},{"_id":"58a91204bed027087df7133c","prod_name":"Cheese and Ham Toast","prod_desc":"Toast with cheese and ham","prod_price":5,"__v":0,"updated_at":"2017-02-19T03:33:24.941Z"}]```
 Next, we are testing to get one product by id using this command.
-```curl -i -H "Accept: application/json" localhost:3000/api/v1/ products/58a91204bed027087df7133c
-```
+```curl -i -H "Accept: application/json" localhost:3000/api/v1/ products/58a91204bed027087df7133c```
 The response should be like this.
 HTTP/1.1 200 OK
 X-Powered-By: Express
@@ -143,8 +142,7 @@ ETag: W/"9c-NYW3p4BkPVbiNf05Ezj+zA"
 Date: Sun, 19 Feb 2017 03:45:48 GMT
 Connection: keep-alive
 
-```{"_id":"58a91204bed027087df7133c","prod_name":"Cheese and Ham Toast","prod_desc":"Toast with cheese and ham","prod_price":5,"__v":0,"updated_at":"2017-02-19T03:33:24.941Z"}
-```
+```{"_id":"58a91204bed027087df7133c","prod_name":"Cheese and Ham Toast","prod_desc":"Toast with cheese and ham","prod_price":5,"__v":0,"updated_at":"2017-02-19T03:33:24.941Z"}```
 Next, we are editing and update one of a product by id using this command. First, copy id from one of product from the response before then paste it as the parameter.
 ```curl -i -X PUT -H "Content-Type: application/json" -d '{"prod_desc":"Irish Cheese Toast"}' localhost:3000/ api/v1/ products/58a9115abed027087df7133b```
 It should response like this.
