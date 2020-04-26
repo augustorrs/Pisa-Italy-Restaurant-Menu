@@ -106,8 +106,7 @@ app.use('/products', products);
 After everything is ready, this time to testing our created Node.js, Express.js, Mongoose.js and MongoDB REST API. There are so many tools for testing REST API, but for now, we are testing using CURL from the terminal.
 
 We start with Add/Save product data first. Open a new terminal tab or windows then type this command.
-```curl -i -X POST -H "Content-Type: application/json" -d '{ "prod_name":"Cheese Toast","prod_desc":"Toast with cheese","prod_price": 3 }' localhost:3000/ api/v1/ products
-```
+```curl -i -X POST -H "Content-Type: application/json" -d '{ "prod_name":"Cheese Toast","prod_desc":"Toast with cheese","prod_price": 3 }' localhost:3000/ api/v1/ products```
 If you get a response like below, then you save a new product successfully.
 HTTP/1.1 200 OK
 X-Powered-By: Express
@@ -117,14 +116,11 @@ ETag: W/"b9-ymiFjoNdt5wABoii1CiYbg"
 Date: Sun, 19 Feb 2017 03:30:35 GMT
 Connection: keep-alive
 
-```{"__v":0,"prod_name":"Cheese Toast","prod_desc":"Toast with cheese","prod_price":3,"_id":"58a9115abed027087df7133b","updated_at":"2017-02-19T03:30:34.415Z"}
-```
+```{"__v":0,"prod_name":"Cheese Toast","prod_desc":"Toast with cheese","prod_price":3,"_id":"58a9115abed027087df7133b","updated_at":"2017-02-19T03:30:34.415Z"}```
 We can create the same POST with different data to populate more records to product collection.
-```curl -i -X POST -H "Content-Type: application/json" -d '{ "prod_name":"Cheese and Ham Toast","prod_desc":"Toast with cheese and ham","prod_price": 5 }' localhost:3000/ api/v1/ products
-```
+```curl -i -X POST -H "Content-Type: application/json" -d '{ "prod_name":"Cheese and Ham Toast","prod_desc":"Toast with cheese and ham","prod_price": 5 }' localhost:3000/ api/v1/ products```
 Next, we are testing to get all product data using this command.
-```curl -i -H "Accept: application/json" localhost:3000/ api/v1/ products
-```
+```curl -i -H "Accept: application/json" localhost:3000/ api/v1/ products```
 That command will response to products data with JSON format.
 HTTP/1.1 200 OK
 X-Powered-By: Express
@@ -134,8 +130,7 @@ ETag: W/"158-V1WRYZrNC8yW7HFEfOSSew"
 Date: Sun, 19 Feb 2017 03:34:26 GMT
 Connection: keep-alive
 
-```[{"_id":"58a9115abed027087df7133b","prod_name":"Cheese Toast","prod_desc":"Toast with cheese","prod_price":3,"__v":0,"updated_at":"2017-02-19T03:30:34.415Z"},{"_id":"58a91204bed027087df7133c","prod_name":"Cheese and Ham Toast","prod_desc":"Toast with cheese and ham","prod_price":5,"__v":0,"updated_at":"2017-02-19T03:33:24.941Z"}]
-```
+```[{"_id":"58a9115abed027087df7133b","prod_name":"Cheese Toast","prod_desc":"Toast with cheese","prod_price":3,"__v":0,"updated_at":"2017-02-19T03:30:34.415Z"},{"_id":"58a91204bed027087df7133c","prod_name":"Cheese and Ham Toast","prod_desc":"Toast with cheese and ham","prod_price":5,"__v":0,"updated_at":"2017-02-19T03:33:24.941Z"}]```
 Next, we are testing to get one product by id using this command.
 ```curl -i -H "Accept: application/json" localhost:3000/api/v1/ products/58a91204bed027087df7133c
 ```
