@@ -2,7 +2,7 @@
 # Pisa-Italian Restaurant using NodeRestApi 
 
 
-/*Database Design */
+#Database Design
 Database: Mongo DB
 Database name: pisa
 Collection Name: products
@@ -11,7 +11,7 @@ item-Item(ex: Bruschetta Con Pomodoro),
 desc-Description, 
 price-Price$
 
-/*CRUD API */
+#CRUD API
 The REST API that we build will have the following functions.
 Method	Endpoints	Notes
 GET	 /product	Get all products
